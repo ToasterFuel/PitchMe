@@ -162,7 +162,7 @@ public class ButtonCallbacks : MonoBehaviour
         lineRenderer.GetPositions(positions);
         for(int i = 0; i < positions.Length; i++)
         {
-            positions[i] = new Vector3(i, spectrum[i] * 100, 0);
+            positions[i] = new Vector3(i, spectrum[i] * 1000, 0);
         }
 
         lineRenderer.SetPositions(positions);

@@ -42,7 +42,6 @@ public class MicrophoneData: MonoBehaviour
         audioSource.loop = true;
         if(!Microphone.IsRecording(microphoneName))
         {
-            Debug.Log("Micophone doesnt work :(");
             return;
         }
 
@@ -77,7 +76,6 @@ public class MicrophoneData: MonoBehaviour
             if(decreaseCount > 2)
                 break;*/
         }
-        Debug.Log("VALUE: " + maxSpectrumFrequency);
     }
 
     public float GetAverageVolume()
@@ -91,6 +89,31 @@ public class MicrophoneData: MonoBehaviour
 
         return average / waveformData.Length;
     }
+
+    /*public void GetSubset()
+    {
+        AudioClip audioClip = audioSource.clip;
+        int samplesPerSecond = (int) (audioClip.samples / audioClip.length);
+        float desiredLengthOfClip = 0.5f; //in seconds
+        int sizeOfDesiredClip = (int) (desiredLengthOfClip * samplesPerSecond);
+
+        float[] samples = new float[sizeOfDesiredClip];
+
+        for (int i = 0; i < samples.Length; i++)
+        {
+            samples[i] = 0;
+        }
+        audioClip.GetData(samples, 0);
+
+        for(int i =0; i < samples.Length; i++)
+        {
+            if(samples[i] != 0)
+            {
+                Debug.Log("DATA IS HERE!");
+                break;
+            }
+        }
+    }*/
 
     public List<string> GetMicrophoneNames()
     {
